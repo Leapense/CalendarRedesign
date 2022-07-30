@@ -29,7 +29,7 @@ public sealed partial class Make_AppointmentPage : Page
     {
         try
         {
-            var cs = @"Server=192.168.1.6,1433;uid=sa;pwd=1234;database=dbo;";
+            var cs = @"Server=####,1433;uid=sa;pwd=1234;database=dbo;";
             using var conn = new SqlConnection(cs);
             conn.Open();
             var sql = "insert into alarm (yourname, dates, place, times, info) values (@yourname, @dates, @place, @times, @info);";
@@ -51,7 +51,7 @@ public sealed partial class Make_AppointmentPage : Page
         
         try
         {
-            var cs = @"Server=192.168.1.6,1433;uid=sa;pwd=1234;database=dbo;";
+            var cs = @"Server=####,1433;uid=sa;pwd=1234;database=dbo;";
             using var conn = new SqlConnection(cs);
             conn.Open();
             var sql = "select * from alarm where yourname = N'" + YourName.Text + "';";
