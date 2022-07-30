@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="Calendar_Redesign.Views.WelcomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="ContentArea">
+        <RelativePanel>
+            <StackPanel Orientation="Vertical"
+                    Margin="10" Name="R1">
+                <TextBlock Text="Changelog" FontFamily="Segoe UI Variable Display" FontSize="24"/>
+                <TextBlock Text="V. 0.0.2" FontFamily="Segoe UI Variable Display" FontSize="20"/>
+                <TextBlock Text="KR(한국어)" FontFamily="Segoe UI Variable Display" FontSize="18" Margin="0,20,0,0"/>
+                <TextBlock Text="초기 빌드 릴리즈입니다." FontFamily="Segoe UI Variable Display" FontSize="16"/>
+                <TextBlock Text="MSSQL DB를 연동하여 사용자님께서의 일정 관리해주는 앱입니다." FontFamily="Segoe UI Variable Display" FontSize="16"/>
+                <TextBlock Text="에러 사항이나 제안 사항이 있으시다면 해당 깃허브에 올려주세요." FontFamily="Segoe UI Variable Display" FontSize="16"/>
+                <TextBlock Text="English" FontFamily="Segoe UI Variable Display" FontSize="18" Margin="0,20,0,0"/>
+                <TextBlock Text="This is Initial Release." FontFamily="Segoe UI Variable Display" FontSize="16"/>
+                <TextBlock Text="This app will help your schedule with MSSQL DB." FontFamily="Segoe UI Variable Display" FontSize="16"/>
+                <TextBlock Text="If you have bug or feedback, Please come to my github page." FontFamily="Segoe UI Variable Display" FontSize="16"/>
+                <TextBlock Text="German" FontFamily="Segoe UI Variable Display" FontSize="18" Margin="0,20,0,0"/>
+                <TextBlock Text="Dies ist die erste Version." FontFamily="Segoe UI Variable Display" FontSize="16"/>
+                <TextBlock Text="Diese App hilft Ihnen bei der Planung mit MSSQL DB" FontFamily="Segoe UI Variable Display" FontSize="16"/>
+                <TextBlock Text="Wenn Sie Fehler oder Feedback haben, kommen Sie bitte zu meiner github Seite." FontFamily="Segoe UI Variable Display" FontSize="16"/>
+                <Button Content="Github" FontFamily="Segoe UI Variable Display" FontSize="18" Margin="0,50,0,0"/>
+
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="10" RelativePanel.RightOf="R1">
+                <PersonPicture Name="PersonPicture" Width="100" Height="100" Margin="220,0,0,0"/>
+                <TextBlock Name="UN" Text="Username" FontFamily="Segoe UI Variable Display SemiBold" FontSize="26" HorizontalAlignment="Center" Margin="220,20,0,0"/>
+                <Button Content="Change Avatar" FontFamily="Segoe UI Variable Display" FontSize="18" Margin="220,80,0,0" />
+                
+            </StackPanel>
+        </RelativePanel>
+    </Grid>
+</Page>

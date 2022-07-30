@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "Calendar_Redesign (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "Calendar_Redesign (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}

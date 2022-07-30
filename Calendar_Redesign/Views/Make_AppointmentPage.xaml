@@ -1,0 +1,81 @@
+﻿<Page
+    x:Class="Calendar_Redesign.Views.Make_AppointmentPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="ContentArea">
+        <RelativePanel>
+            <ScrollViewer VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled" Name="FirstPage">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="L1" Text="언어:" FontFamily="Segoe UI Variable Display" VerticalAlignment="Center"/>
+                        <ComboBox Name="Lang" Width="200" Margin="20,0,0,0" SelectionChanged="ComboBox_SelectionChanged">
+                            <ComboBoxItem Content="한국어"/>
+                            <ComboBoxItem Content="English"/>
+                            <ComboBoxItem Content="Germen"/>
+                        </ComboBox>
+                        <TextBlock Name="Name" Text="이름:" FontFamily="Segoe UI Variable Display" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        <TextBox Width="200" Margin="20,0,0,0" Name="YourName"/>
+                    </StackPanel>
+                    <TextBlock Name="T1" Text="약속 일정" FontFamily="Segoe UI Variable Display" FontSize="28" Margin="0,20,0,0"/>
+                    <DatePicker Name="Dates"
+                          Margin="0,20,0,0"/>
+                    <TextBlock Name="T3" Text="약속 시간" FontFamily="Segoe UI Variable Display" FontSize="28" Margin="0,20,0,0"/>
+                    <TimePicker Name="Times" FontFamily="Segoe UI Variable Text" FontSize="17" Margin="0,10,0,0"/>
+                    <TextBlock Name="T2" Text="약속 장소" ToolTipService.ToolTip="기억이 안 나신다면 물어보거나 수첩을 확인해주세요."
+                       FontFamily="Segoe UI Variable Display" FontSize="28" Margin="0,20,0,0"/>
+                    <TextBox Name="Places" PlaceholderText="장소를 입력해주세요." FontFamily="Segoe UI Variable Text" FontSize="17" Margin="0,10,0,0" Width="400" HorizontalAlignment="Left"/>
+                    <TextBlock Name="T4" FontFamily="Segoe UI Variable Display" Text="약속 내용" FontSize="28" Margin="0,20,0,0"/>
+                    <TextBox Name="Description" FontFamily="Segoe UI Variable Display SemiBold" FontSize="13" Margin="0,10,0,0" Width="600" HorizontalAlignment="Left"/>
+                    <Button Name="B1" Content="약속 추가하기" Click="Button_Click" FontFamily="Segoe UI Variable Display Semibold" Margin="0,30,0,30"/>
+                </StackPanel>
+            </ScrollViewer>
+            <StackPanel Margin="30,0,0,0" RelativePanel.RightOf="FirstPage" Orientation="Vertical">
+                <Expander Header="Check Schedule" Width="700" HorizontalContentAlignment="Left">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                        <Button Click="Button_Click_1" HorizontalAlignment="Left" Content="Refresh" FontFamily="Segoe UI Variable Display SemiBold" FontSize="15" Width="100" Height="30"/>
+                        <TextBlock Text="Date             Place          Time         Info"
+                                   FontFamily="Segoe UI Variable Display SemiBold"
+                                   FontSize="15" Margin="20,30,0,0"/>
+                        <ListBox Name="AppointmentList">
+                            <ListBox.Resources>
+                                <SwipeItems x:Key="right" Mode="Execute">
+                                    <SwipeItem Text="Delete" Background="#FFF4B183" Invoked="SwipeItem_Invoked"/>
+                                </SwipeItems>
+                            </ListBox.Resources>
+                        </ListBox>
+                    </StackPanel>
+                </Expander>
+                <Expander Header="Music (need to calm?)" Width="700">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Name="T5" Text="일이 집중이 안되시나요? 그럼 여기에 음악을 넣어보세요."/>
+                        <Border CornerRadius="10" Margin="0,20,0,0" Padding="10" Width="500" Height="150">
+                            <Grid>
+                                <Slider Minimum="0" Maximum="100" Width="400" Margin="0,20,0,0"/>
+                                <CommandBar Margin="0,40,30,0" >
+                                    <CommandBar.PrimaryCommands>
+                                        <AppBarButton Icon="Add" Label="Add Music"/>
+                                        <AppBarSeparator/>
+                                        <AppBarButton Icon="Play" Label="Play"/>
+                                        <AppBarButton Icon="Pause" Label="Pause"/>
+                                        <AppBarButton Icon="Stop" Label="Stop"/>
+                                        <AppBarSeparator/>
+                                        <AppBarButton Icon="Pin" Label="Pin"/>
+                                    </CommandBar.PrimaryCommands>
+                                </CommandBar>
+                                <TextBlock Text="Rick Astley - Never gonna give you up"
+                                           FontFamily="Segoe UI Variable Display SemiBold"
+                                           FontWeight="SemiBold" HorizontalAlignment="Center"
+                                           Margin="0,90,0,0"/>
+                            </Grid>
+                        </Border>
+                        
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+        </RelativePanel>
+    </Grid>
+</Page>
