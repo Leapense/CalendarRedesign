@@ -18,13 +18,16 @@
               VerticalAlignment="Top">
             <Image Source="/Assets/WindowIcon.png"
                    HorizontalAlignment="Left"
-                   Width="16"
-                   Height="16" />
+                   Width="32"
+                   Height="32" />
             <TextBlock x:Name="AppTitleBarText"
                        VerticalAlignment="Center"
                        TextWrapping="NoWrap"
+                       FontFamily="Segoe UI Variable Display SemiBold"
+                       FontWeight="SemiBold"
+                       FontSize="15"
                        Style="{StaticResource CaptionTextBlockStyle}"
-                       Margin="28,0,0,0"/>
+                       Margin="48,0,0,0"/>
         </Grid>
         <NavigationView
             x:Name="NavigationViewControl"

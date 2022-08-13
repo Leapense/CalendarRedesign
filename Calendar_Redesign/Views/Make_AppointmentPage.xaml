@@ -5,7 +5,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
     <Grid x:Name="ContentArea">
         <RelativePanel>
             <ScrollViewer VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled" Name="FirstPage">
@@ -33,46 +32,56 @@
                     <Button Name="B1" Content="약속 추가하기" Click="Button_Click" FontFamily="Segoe UI Variable Display Semibold" Margin="0,30,0,30"/>
                 </StackPanel>
             </ScrollViewer>
-            <StackPanel Margin="30,0,0,0" RelativePanel.RightOf="FirstPage" Orientation="Vertical">
+            <StackPanel Margin="10,0,0,0" RelativePanel.RightOf="FirstPage" Orientation="Vertical">
                 <Expander Header="Check Schedule" Width="700" HorizontalContentAlignment="Left">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                        <Button Click="Button_Click_1" HorizontalAlignment="Left" Content="Refresh" FontFamily="Segoe UI Variable Display SemiBold" FontSize="15" Width="100" Height="30"/>
-                        <TextBlock Text="Date             Place          Time         Info"
-                                   FontFamily="Segoe UI Variable Display SemiBold"
-                                   FontSize="15" Margin="20,30,0,0"/>
-                        <ListBox Name="AppointmentList">
-                            <ListBox.Resources>
-                                <SwipeItems x:Key="right" Mode="Execute">
-                                    <SwipeItem Text="Delete" Background="#FFF4B183" Invoked="SwipeItem_Invoked"/>
-                                </SwipeItems>
-                            </ListBox.Resources>
+                        
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Tag: " FontFamily="Segoe UI Variable Display" FontSize="15" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            <TextBox PlaceholderText="What will you want to tag for your appointment?" FontFamily="Segoe UI Variable Display" Name="Tagus" Width="300" FontSize="11" Margin="10,0,0,0"/>
+                            <Button Click="Button_Click_2" HorizontalAlignment="Left" Content="Save" Margin="5,0,0,0" FontFamily="Segoe UI Variable Display SemiBold" FontSize="12" Width="75"/>
+                            <Button Click="Button_Click_1" HorizontalAlignment="Left" Content="Refresh" FontFamily="Segoe UI Variable Display SemiBold" FontSize="12" Margin="5,0,0,0" Width="75" Height="30"/>
+                            <Button Click="Button_Click_3" HorizontalAlignment="Left" Content="Delete" FontFamily="Segoe UI Variable Display SemiBold" FontSize="12" Margin="5,0,0,0" Width="75" Height="30"/>
+                            <Button Click="Button_Click_4" HorizontalAlignment="Left" Content="Load" FontFamily="Segoe UI Variable Display SemiBold" FontSize="12" Margin="5,0,0,0" Width="75" Height="30"/>
+                        </StackPanel>
+                        <ListBox Margin="0,30,0,0" Name="AppointmentList">
+
                         </ListBox>
                     </StackPanel>
                 </Expander>
                 <Expander Header="Music (need to calm?)" Width="700">
+                    
                     <StackPanel Orientation="Vertical">
                         <TextBlock Name="T5" Text="일이 집중이 안되시나요? 그럼 여기에 음악을 넣어보세요."/>
                         <Border CornerRadius="10" Margin="0,20,0,0" Padding="10" Width="500" Height="150">
                             <Grid>
-                                <Slider Minimum="0" Maximum="100" Width="400" Margin="0,20,0,0"/>
                                 <CommandBar Margin="0,40,30,0" >
                                     <CommandBar.PrimaryCommands>
-                                        <AppBarButton Icon="Add" Label="Add Music"/>
+                                        <AppBarButton Icon="Add" Label="Add Music" Click="AppBarButton_Click"/>
                                         <AppBarSeparator/>
-                                        <AppBarButton Icon="Play" Label="Play"/>
-                                        <AppBarButton Icon="Pause" Label="Pause"/>
-                                        <AppBarButton Icon="Stop" Label="Stop"/>
+                                        <AppBarButton Icon="Play" Label="Play" Click="AppBarButton_Click_1"/>
+                                        <AppBarButton Icon="Pause" Label="Pause" Click="AppBarButton_Click_2"/>
+                                        <AppBarButton Icon="Stop" Label="Stop" Click="AppBarButton_Click_3"/>
                                         <AppBarSeparator/>
-                                        <AppBarButton Icon="Pin" Label="Pin"/>
+                                        <AppBarButton Icon="Save" Label="Save" Click="AppBarButton_Click_4"/>
+                                        <AppBarButton Icon="OpenLocal" Label="Load" Click="AppBarButton_Click_5"/>
                                     </CommandBar.PrimaryCommands>
+                                    <CommandBar.SecondaryCommands>
+                                        <AppBarButton Icon="Remove" Label="Slow down" Click="AppBarButton_Click_6"/>
+                                        <AppBarButton Icon="Add" Label="Speed up" Click="AppBarButton_Click_7"/>
+                                    </CommandBar.SecondaryCommands>
                                 </CommandBar>
                                 <TextBlock Text="Rick Astley - Never gonna give you up"
                                            FontFamily="Segoe UI Variable Display SemiBold"
                                            FontWeight="SemiBold" HorizontalAlignment="Center"
+                                           Name="SongName"
                                            Margin="0,90,0,0"/>
                             </Grid>
                         </Border>
-                        
+                        <TextBlock Text="Playlist" FontFamily="Segoe UI Variable Display SemiBold" FontSize="25" HorizontalAlignment="Center" FontWeight="SemiBold" Margin="0,30,0,0"/>
+                        <ListBox Name="MusicList" Margin="0,20,0,0">
+                            
+                        </ListBox>
                     </StackPanel>
                 </Expander>
             </StackPanel>
